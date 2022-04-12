@@ -19,3 +19,7 @@ quantity = ratings.values
 
 fig = px.pie(data, values=quantity, names=numbers)
 fig.show()
+
+data2 = data.query("Ratings == 10")
+print(data2["Title"].value_counts().head(10))
+
