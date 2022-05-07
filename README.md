@@ -7,3 +7,4 @@
 | Movie Rating Analysis | A visual and numeric analysis on ratings given by viewers of movies | Python |
 | NetFlix Originals | A graphical analysis of Netflix original films by genre | R |
 | Titanic Passengers | An analysis on surviability based in social class aboard the Titanic | R |
+| Rental Prices across US | Examining the increase in monthly rental price and determine what city has the largest influence on attribute max | R |
