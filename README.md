@@ -8,3 +8,4 @@
 | NetFlix Originals | A graphical analysis of Netflix original films by genre | R |
 | Titanic Passengers | An analysis on surviability based in social class aboard the Titanic | R |
 | Rental Prices Across US | Examining the increase in monthly rental price and determine what city has the largest influence on attribute max | R |
+| Sales Affected by Covid-19 | Examining whether the impact of Covid-19 affected sales differently in different countries | R |
