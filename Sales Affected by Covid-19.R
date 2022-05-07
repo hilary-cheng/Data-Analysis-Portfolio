@@ -17,7 +17,10 @@ CountrySubset = list(Italy = subset(COVID_dataClean, COVID_dataClean$Country=="I
                      Russia = subset(COVID_dataClean, COVID_dataClean$Country=="Russian Federation"))
 
 
-#I am going to conduct a hypothesis test to determine whether sales were affected by COVID-19 pandemic policies in Italy, Greece, Bulgaria, Hungary, Romania, Poland, and Russia. I have chosen to ignore all the rows that contains NA, -9, and -99 in column 'COVb2a' to provide a more conclusive result. My null hypothesis is that COVID-19 pandemic policies did not affect sales in the above countries and my alternative hypothesis is that COVID-19 pandemic policies did affect sales.
+#I am going to conduct a hypothesis test to determine whether sales were affected by COVID-19 pandemic policies in Italy, Greece, Bulgaria, 
+#Hungary, Romania, Poland, and Russia. I have chosen to ignore all the rows that contains NA, -9, and -99 in column 'COVb2a' to provide a more 
+#conclusive result. My null hypothesis is that COVID-19 pandemic policies did not affect sales in the above countries and my alternative hypothesis 
+#is that COVID-19 pandemic policies did affect sales.
 
 
 
@@ -91,12 +94,15 @@ z <- (xbar-a)/(s/sqrt(n))
 2*pnorm(-abs(z))
 
 
-#I made the assumption that the data follows a normal distribution and we can see that the p-values of all the above countries, is less than $\alpha = 0.05$ which indicates that we can reject the null hypothesis that COVID-19 pandemic policies had no affect on small and medium sized business sales. So we can conclude with a 5% level of significance that COVID-19 pandemic policies affected business sales. 
+#I made the assumption that the data follows a normal distribution and we can see that the p-values of all the above countries, 
+#is less than $\alpha = 0.05$ which indicates that we can reject the null hypothesis that COVID-19 pandemic policies had no affect on small 
+#and medium sized business sales. So we can conclude with a 5% level of significance that COVID-19 pandemic policies affected business sales. 
 
 
 #Were the effects of COVID-19 pandemic policies on sales similar between countries?
 
-#More specifically, I am going to look at whether the % decrease in sales are similar between countries because the mean of the answers recorded in COVb2a are closer to 3, which indicates that in general, there has been a decrease in sales due to the COVID-19 pandemic. 
+#More specifically, I am going to look at whether the % decrease in sales are similar between countries because the mean of the answers recorded in 
+#COVb2a are closer to 3, which indicates that in general, there has been a decrease in sales due to the COVID-19 pandemic. 
 
 #Italy vs Greece
 
@@ -144,12 +150,16 @@ hist(diffLengths, breaks = 20, main = "Randomly Mixed Populations from Italy & G
 abline(v = diffAveLengths(pop), col = "red", lwd = 2)
 
 
-#By looking at a randomly mixed population, I can determine whether the % decrease in sales are similar between Italy and Greece. The red line indicates the difference betwen the average % decrease in Italy and Greece. As we can see from the histogram, the redline seems to be extreme relative to the randomly mixed differences. So there appears to be a significant difference in average % decrease in sales with Italy having a greater % decrease than Greece. 
+#By looking at a randomly mixed population, I can determine whether the % decrease in sales are similar between Italy and Greece. The red line 
+#indicates the difference betwen the average % decrease in Italy and Greece. As we can see from the histogram, the redline seems to be extreme 
+#relative to the randomly mixed differences. So there appears to be a significant difference in average % decrease in sales with Italy having a 
+#greater % decrease than Greece. 
 
 
 #Poland vs Russia
 
-popPR <- list(pop1 = subset(COVID_dataClean, COVID_dataClean$Country == "Poland" & COVID_dataClean$COVb2a == 3), pop2 = subset(COVID_dataClean, COVID_dataClean$Country == "Russian Federation" & COVID_dataClean$COVb2a == 3))
+popPR <- list(pop1 = subset(COVID_dataClean, COVID_dataClean$Country == "Poland" & COVID_dataClean$COVb2a == 3), 
+              pop2 = subset(COVID_dataClean, COVID_dataClean$Country == "Russian Federation" & COVID_dataClean$COVb2a == 3))
 
 set.seed(341)
 mixedPop <- mixRandomly(pop)
@@ -163,11 +173,14 @@ hist(diffLengths, breaks = 20, main = "Randomly Mixed Populations from Poland & 
 abline(v = diffAveLengths(popPR), col = "red", lwd = 2)
 
 
-#The red line indicates the difference betwen the average % decrease in Poland and Russia As we can see from the histogram, the redline seems to be extreme relative to the randomly mixed differences. So there appears to be a significant difference in average % decrease in sales with Russia having a greater % decrease than Poland. 
+#The red line indicates the difference betwen the average % decrease in Poland and Russia As we can see from the histogram, the redline 
+#seems to be extreme relative to the randomly mixed differences. So there appears to be a significant difference in average % decrease in sales 
+#with Russia having a greater % decrease than Poland. 
 
 #Hungary vs Romania
 
-popHR <- list(pop1 = subset(COVID_dataClean, COVID_dataClean$Country == "Hungary" & COVID_dataClean$COVb2a == 3), pop2 = subset(COVID_dataClean, COVID_dataClean$Country == "Romania" & COVID_dataClean$COVb2a == 3))
+popHR <- list(pop1 = subset(COVID_dataClean, COVID_dataClean$Country == "Hungary" & COVID_dataClean$COVb2a == 3), 
+              pop2 = subset(COVID_dataClean, COVID_dataClean$Country == "Romania" & COVID_dataClean$COVb2a == 3))
 
 set.seed(341)
 mixedPop <- mixRandomly(pop)
@@ -180,6 +193,8 @@ hist(diffLengths, breaks = 20, main = "Randomly Mixed Populations from Hungary a
     col = "lightgrey")
 abline(v = diffAveLengths(popHR), col = "red", lwd = 2)
 
-#The red line indicates the difference betwen the average % decrease in Hungary and Romania. As we can see from the histogram, the redline seems to be extreme relative to the randomly mixed differences. So there appears to be a significant difference in average % decrease in sales with Romania having a greater % decrease than Hungary. 
+#The red line indicates the difference betwen the average % decrease in Hungary and Romania. As we can see from the histogram, the redline seems 
+#to be extreme relative to the randomly mixed differences. So there appears to be a significant difference in average % decrease in sales with 
+#Romania having a greater % decrease than Hungary. 
 
 #Conclusion: The affect of COVID-19 pandemic policies on sales aren’t similar between countries
